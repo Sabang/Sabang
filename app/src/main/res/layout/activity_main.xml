@@ -12,7 +12,7 @@
         android:layout_marginTop="85dp"
         android:text="방옵션"/>
 
-        <TextView
+    <TextView
             android:id="@+id/room_option"
             android:layout_width="match_parent"
             android:layout_height="100dp"
