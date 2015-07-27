@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-
+//hi
 public class BoardContentActivity extends Activity {
 
     @Override
