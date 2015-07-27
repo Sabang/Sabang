@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LogoActivity"
+    android:background="@drawable/main">
+
+    <Button
+        android:id="@+id/room_option_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="85dp"
+        android:text="방옵션"/>
+
+    <TextView
+            android:id="@+id/room_option"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/room_option_btn"
+            android:background="#ffffff"
+            android:visibility="invisible"
+            android:text="option"/>
+
+    <ListView
+        android:id="@+id/room_list"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/room_option_btn"
+        android:background="#ffffff"
+        android:divider="#000000"
+        android:dividerHeight="1.5dp"
+        android:choiceMode="singleChoice"
+        >
+    </ListView>
+
+    
+</RelativeLayout>
