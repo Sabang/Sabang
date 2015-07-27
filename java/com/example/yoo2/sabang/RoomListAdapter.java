@@ -9,9 +9,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by yoo2 on 15. 7. 23..
- */
 public class RoomListAdapter extends BaseAdapter{
     private LayoutInflater inflater;
 
