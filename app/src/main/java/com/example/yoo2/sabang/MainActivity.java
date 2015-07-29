@@ -15,6 +15,12 @@ public class MainActivity extends Activity {
 
     int optionToggle = 0;
 
+    //메뉴버튼들 구현
+    private Button button_main;
+    private Button button_board;
+    private Button button_setting;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,5 +65,29 @@ public class MainActivity extends Activity {
 
         RoomListAdapter adapter = new RoomListAdapter(this, R.layout.room_list, data);
         listView.setAdapter(adapter);
+
+
+        //메뉴버튼 구현
+        button_main = (Button) findViewById(R.id.button_main);
+        button_main.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent toMain = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(toMain);
+            }
+        });
+        button_board = (Button) findViewById(R.id.button_board);
+        button_board.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent toBoard = new Intent(MainActivity.this, BoardActivity.class);
+                startActivity(toBoard);
+            }
+        });
+        button_setting = (Button) findViewById(R.id.button_setting);
+        button_setting.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent toSetting = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(toSetting);
+            }
+        });
     }
 }
