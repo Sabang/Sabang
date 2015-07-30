@@ -3,9 +3,6 @@ package com.example.yoo2.sabang;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -18,9 +15,7 @@ public class BoardActivity extends Activity {
     private ListView boardListView;
     private ArrayAdapter arrayAdapter;
 
-    //메뉴버튼들 구현
     private Button button_main;
-    private Button button_board;
     private Button button_setting;
 
 
@@ -34,19 +29,12 @@ public class BoardActivity extends Activity {
         arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, boardArray);
         boardListView.setAdapter(arrayAdapter);
 
-        //메뉴버튼 구현
         button_main = (Button) findViewById(R.id.button_main);
         button_main.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent toMain = new Intent(BoardActivity.this, MainActivity.class);
                 startActivity(toMain);
-            }
-        });
-        button_board = (Button) findViewById(R.id.button_board);
-        button_board.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent toBoard = new Intent(BoardActivity.this, BoardActivity.class);
-                startActivity(toBoard);
+                finish();
             }
         });
         button_setting = (Button) findViewById(R.id.button_setting);
@@ -54,6 +42,7 @@ public class BoardActivity extends Activity {
             public void onClick(View v) {
                 Intent toSetting = new Intent(BoardActivity.this, SettingActivity.class);
                 startActivity(toSetting);
+                finish();
             }
         });
 

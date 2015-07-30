@@ -2,7 +2,6 @@ package com.example.yoo2.sabang;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,10 +12,8 @@ import android.widget.Button;
 public class SettingActivity extends Activity {
 
 
-    //메뉴버튼들 구현
     private Button button_main;
     private Button button_board;
-    private Button button_setting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +21,12 @@ public class SettingActivity extends Activity {
         setContentView(R.layout.activity_setting);
 
 
-        //메뉴버튼 구현
         button_main = (Button) findViewById(R.id.button_main);
         button_main.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent toMain = new Intent(SettingActivity.this, MainActivity.class);
                 startActivity(toMain);
+                finish();
             }
         });
         button_board = (Button) findViewById(R.id.button_board);
@@ -37,13 +34,7 @@ public class SettingActivity extends Activity {
             public void onClick(View v) {
                 Intent toBoard = new Intent(SettingActivity.this, BoardActivity.class);
                 startActivity(toBoard);
-            }
-        });
-        button_setting = (Button) findViewById(R.id.button_setting);
-        button_setting.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent toSetting = new Intent(SettingActivity.this, SettingActivity.class);
-                startActivity(toSetting);
+                finish();
             }
         });
     }

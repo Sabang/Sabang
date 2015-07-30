@@ -1,6 +1,7 @@
 package com.example.yoo2.sabang;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -13,11 +14,13 @@ public class LogoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logo);
 
+        final Intent intent = new Intent(this,MainActivity.class);
+
         Handler mHandler = new Handler()
         {
             @Override
-
         public void handleMessage(Message msg){
+                startActivity(intent);
                 finish();
             }
         };
