@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -64,7 +65,18 @@ public class MainActivity extends Activity {
         listView.setAdapter(adapter);
 
 
-        //메뉴버튼 구현
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent toRoom = new Intent(MainActivity.this, RoomActivity.class);
+                startActivity(toRoom);
+                finish();
+
+            }
+        });
+
+
+        //menu button
         button_board = (Button) findViewById(R.id.button_board);
         button_board.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

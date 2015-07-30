@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -25,9 +26,7 @@ public class BoardActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
 
-        boardListView = (ListView) findViewById(R.id.boardListView);
-        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, boardArray);
-        boardListView.setAdapter(arrayAdapter);
+        //menu button
 
         button_main = (Button) findViewById(R.id.button_main);
         button_main.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +42,24 @@ public class BoardActivity extends Activity {
                 Intent toSetting = new Intent(BoardActivity.this, SettingActivity.class);
                 startActivity(toSetting);
                 finish();
+            }
+        });
+
+
+        //listview event
+        //click any button, go to BoardContentActivity
+        //http://www.ezzylearning.com/tutorial/handling-android-listview-onitemclick-event
+        boardListView = (ListView) findViewById(R.id.boardListView);
+        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, boardArray);
+        boardListView.setAdapter(arrayAdapter);
+
+        boardListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent toBoardContent = new Intent(BoardActivity.this, BoardContentActivity.class);
+                startActivity(toBoardContent);
+                finish();
+
             }
         });
 
