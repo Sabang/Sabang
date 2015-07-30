@@ -70,8 +70,6 @@ public class MainActivity extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent toRoom = new Intent(MainActivity.this, RoomActivity.class);
                 startActivity(toRoom);
-                finish();
-
             }
         });
 

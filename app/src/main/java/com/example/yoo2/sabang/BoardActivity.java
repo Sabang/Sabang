@@ -58,11 +58,8 @@ public class BoardActivity extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent toBoardContent = new Intent(BoardActivity.this, BoardContentActivity.class);
                 startActivity(toBoardContent);
-                finish();
 
             }
         });
-
     }
-
 }
